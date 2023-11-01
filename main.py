@@ -40,6 +40,20 @@ estilo.theme_use("clam")
 l_app_nome = Label(frame_cima, text='Calculadora de Medidas', height=1, padx=0, relief='flat', anchor='center', font=('Ivy 15 bold'), bg=cor2, fg=cor3)
 l_app_nome.place(x=50, y=10)
 
+#configurando funcionalidade
+
+unidades = {'peso':[{'g': 1},{'kg': 1000},{'mg': 0.001},{'lb': 0.00220462},{'oz': 0.035274}],
+            'comprimento':[],
+            'volume':[],
+            'tempo':[]
+            }
+
+def mostrar_menu():
+    
+    unidade_de = []
+    unidade_para = []
+    unidade_valores = []
+
 #configurando frame esquerda
 
 #Botao Massa
@@ -104,6 +118,37 @@ img_8 = img_8.resize((50,50))
 img_8 = ImageTk.PhotoImage(img_8)
 b_8 = Button(frame_esquerda, text='Pressão',image=img_8, compound=LEFT, width=130, height=50, relief='flat', overrelief='solid' , anchor='nw', font=('Ivy 10 bold'), bg=cor3, fg=cor2)
 b_8.grid(row=3, column=2, sticky= NSEW, pady=5, padx=5)
+
+
+
+#Frame direito
+l_unidade_nome = Label(frame_direita, text='Unidade', height=2,width=15, padx=4, relief='groove', anchor='center', font=('Ivy 15 bold'), bg=cor2, fg=cor1)
+l_unidade_nome.place(x=0, y=0)
+
+l_de = Label(frame_direita, text='De', height=1, padx=4, relief='groove', anchor='center', font=('Ivy 10 bold'), bg=cor2, fg=cor1)
+l_de.place(x=0, y=70)
+c_de = ttk.Combobox(frame_direita, width=5, justify=('center'), font=('Ivy 8 bold'))
+c_de.place(x=28, y=70)
+
+l_para = Label(frame_direita, text='Para', height=1, padx=3, relief='groove', anchor='center', font=('Ivy 10 bold'), bg=cor2, fg=cor1)
+l_para.place(x=100, y=70)
+c_para = ttk.Combobox(frame_direita, width=5, justify=('center'), font=('Ivy 8 bold'))
+c_para.place(x=140, y=70)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
