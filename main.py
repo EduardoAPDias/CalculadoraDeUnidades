@@ -43,7 +43,7 @@ l_app_nome.place(x=50, y=10)
 #configurando funcionalidade
 
 unidades = {'peso':[{'g': 1},{'kg': 1000},{'mg': 0.001},{'lb': 0.00220462},{'oz': 0.035274}],
-            'comprimento':[],
+            'comprimento':[{'km':1000}, {'m':1}, {'cm':0.01}, {'mm':0.001}, {'in':0.393701}, {'ft':0.032808}],
             'volume':[],
             'tempo':[]
             }
@@ -53,7 +53,17 @@ def mostrar_menu():
     unidade_de = []
     unidade_para = []
     unidade_valores = []
+    
+    for j in unidades ['comprimento']:
+        for k, v in j.items():
+            unidade_de.append(k)
+            unidade_para.append(k)
+            unidade_valores.append(v)
 
+
+    c_de['values'] = unidade_de
+    c_para['values'] = unidade_para
+    c_de['values'] = unidade_de
 #configurando frame esquerda
 
 #Botao Massa
@@ -150,6 +160,6 @@ c_para.place(x=140, y=70)
 
 
 
-
+mostrar_menu()
 
 janela.mainloop()
